@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+
+person:
+    lastName: zhangsan
+    age: 10
+    yn: false
+    birth: 2019/01/02
+    maps: {k1:v1 , k2:11}
+    lists:
+      - a
+      - c
+      - d
+    dog:
+      name: 阿旺
+      age: 2
