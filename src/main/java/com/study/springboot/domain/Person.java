@@ -1,6 +1,8 @@
 package com.study.springboot.domain;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -18,18 +20,21 @@ import java.util.Map;
  * @ConfigurationProperties(prefix = "person")默认从全局配置文件中获取值；
  *
  */
+//@ConfigurationProperties(prefix = "person")   //1、yml获取方式
 @Component
-@ConfigurationProperties(prefix = "person")
 public class Person {
 
+    @Value("${person.last-name}")
     private String lastName;
+    @Value("${person.age}")
     private Integer age;
+    @Value("${person.yn}")
     private Boolean yn;
+    @Value("${person.birth}")
     private Date birth;
 
     private Map<String,Object> maps;
     private List<Object> lists;
-
     private Dog dog;
 
     @Override

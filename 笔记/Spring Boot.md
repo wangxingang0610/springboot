@@ -11,6 +11,8 @@
 
 coding:
 
+注入值的方式1:
+
 1.Person.java、Dog.java
 
         @Component
@@ -73,3 +75,94 @@ coding:
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
     
+注入值的方式2:
+
+1.java
+
+    Person.java
+    
+        @Component
+        public class Person {
+        
+            @Value("${person.last-name}")
+            private String lastName;
+            @Value("${person.age}")
+            private Integer age;
+            @Value("${person.yn}")
+            private Boolean yn;
+            @Value("${person.birth}")
+            private Date birth;
+            
+            private Map<String,Object> maps;
+            private List<Object> lists;
+            private Dog dog;
+            
+            //省略
+        }
+    
+    Dog.java 
+    
+        Dog
+        
+        public class Dog {
+        
+            private String name;
+            private Integer age;
+            
+            //省略
+        }
+
+2.application.properties
+
+        person.last-name=aa
+        person.age=20
+        person.yn=false
+        person.birth=2019/01/01
+        person.maps.k1=v1
+        person.maps.k2=aa
+        person.lists=a,1,2
+        person.dog.name=aa_dog
+        person.dog.age=3
+
+
+3.测试类相同
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
