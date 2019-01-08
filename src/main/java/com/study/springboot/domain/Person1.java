@@ -1,8 +1,6 @@
 package com.study.springboot.domain;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
@@ -23,14 +21,18 @@ import java.util.Map;
  *   //1、yml获取方式
  */
 @Component
-@ConfigurationProperties(prefix = "person")
 @Validated
-public class Person {
+public class Person1 {
 
-//    @Email
+    @Email
+    @Value("${person1.lastName}")
     private String lastName;
+//    @Value("${person1.age}")
+//    @Value("${11*2}")
     private Integer age;
+    @Value("${person1.yn}")
     private Boolean yn;
+    @Value("${person1.birth}")
     private Date birth;
 
     private Map<String,Object> maps;
@@ -39,7 +41,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person1{" +
                 "lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", yn=" + yn +

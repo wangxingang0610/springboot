@@ -1,6 +1,7 @@
 package com.study.springboot;
 
 import com.study.springboot.domain.Person;
+import com.study.springboot.domain.Person1;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SpringBoot02ConfigApplicationTests {
 
+//    @Autowired
+//    Person person;
+
+
     @Autowired
-    Person person;
+    Person1 person1;
 
     @Test
     public void contextLoads() {
         System.out.println("\n");
-        System.out.println(person);
+
+        //方式1：@ConfigurationProperties
+//        System.out.println(person);
+
+        //方式2：@Value
+        System.out.println(person1);
         System.out.println("\n");
     }
 
