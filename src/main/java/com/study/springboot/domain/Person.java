@@ -22,9 +22,9 @@ import java.util.Map;
  * @ConfigurationProperties(prefix = "person")默认从全局配置文件中获取值；
  *   //1、yml获取方式
  */
+@PropertySource(value = "classpath:person.properties")
 @Component
 @ConfigurationProperties(prefix = "person")
-@Validated
 public class Person {
 
 //    @Email

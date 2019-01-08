@@ -21,18 +21,16 @@ import java.util.Map;
  *   //1、yml获取方式
  */
 @Component
-@Validated
 public class Person1 {
 
-    @Email
-    @Value("${person1.lastName}")
+//    @Value("${person1.lastName}")
     private String lastName;
 //    @Value("${person1.age}")
 //    @Value("${11*2}")
     private Integer age;
-    @Value("${person1.yn}")
+//    @Value("${person1.yn}")
     private Boolean yn;
-    @Value("${person1.birth}")
+//    @Value("${person1.birth}")
     private Date birth;
 
     private Map<String,Object> maps;
